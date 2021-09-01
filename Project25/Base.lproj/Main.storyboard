@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SAH-Ni-rNN">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SAH-Ni-rNN">
                             <size key="itemSize" width="145" height="145"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -35,10 +35,10 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="centerY" secondItem="BiH-05-mje" secondAttribute="centerY" id="4Rp-Im-tWY"/>
-                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="centerX" secondItem="BiH-05-mje" secondAttribute="centerX" id="dtu-Gl-QzT"/>
-                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="top" secondItem="BiH-05-mje" secondAttribute="top" id="tTM-0v-fzB"/>
-                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="leading" secondItem="BiH-05-mje" secondAttribute="leading" id="yTN-nt-Pq9"/>
+                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="leading" secondItem="BiH-05-mje" secondAttribute="leading" id="8eE-yT-jvu"/>
+                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="centerY" secondItem="BiH-05-mje" secondAttribute="centerY" id="DvF-rl-nY2"/>
+                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="centerX" secondItem="BiH-05-mje" secondAttribute="centerX" id="cB8-NL-VWM"/>
+                                        <constraint firstItem="KNO-Jc-fIv" firstAttribute="top" secondItem="BiH-05-mje" secondAttribute="top" id="h8v-JO-WQp"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                             </collectionViewCell>

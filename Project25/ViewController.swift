@@ -29,6 +29,7 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
     func startHosting(action: UIAlertAction) {
         guard let mcSession = mcSession else { return }
         mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "hws-project25", discoveryInfo: nil, session: mcSession)
+        mcAdvertiserAssistant?.start()
     }
     
     func joinSession(action: UIAlertAction) {

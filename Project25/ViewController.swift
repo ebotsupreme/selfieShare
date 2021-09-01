@@ -134,5 +134,7 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
             }
         }
     }
+    
+    // skip challenge
 }
 

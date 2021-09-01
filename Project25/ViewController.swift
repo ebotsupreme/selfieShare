@@ -8,7 +8,7 @@
 import MultipeerConnectivity
 import UIKit
 
-class ViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MCSessionDelegate, MCBrowserViewControllerDelegate {
     var images = [UIImage]()
     
     var peerID = MCPeerID(displayName: UIDevice.current.name)
@@ -33,7 +33,7 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
     
     func joinSession(action: UIAlertAction) {
         guard let mcSession = mcSession else { return }
-        let mcBrowser = MCBrowserViewController(browser: "hws-project25", session: mcSession)
+        let mcBrowser = MCBrowserViewController(serviceType: "hws-project25", session: mcSession)
         mcBrowser.delegate = self
         present(mcBrowser, animated: true)
     }
@@ -74,6 +74,41 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
     }
-
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true)
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true)
+    }
+    
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        switch state {
+        case .connected:
+            print("Connected: \(peerID.displayName)")
+            
+        case .connecting:
+            print("Connecting: \(peerID.displayName)")
+            
+        case .notConnected:
+            print("Not Connected: \(peerID.displayName)")
+        
+        @unknown default:
+            print("Unknown state received: \(peerID.displayName)")
+        }
+    }
 }
 
